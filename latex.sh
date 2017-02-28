@@ -4,11 +4,15 @@ read -r name
 echo nbr prosit
 read -r nbr
 mkdir /home/$name/Documents/exia/Prosit_$nbr/
-cp template.tex /home/$name/Documents/exia/Prosit_$nbr/
 cd /home/$name/Documents/exia/Prosit_$nbr/
+wget https://raw.githubusercontent.com/pierre-geeraert/latex-template-CER/master/template.tex
+wget https://github.com/pierre-geeraert/pierre-geeraert.github.io/blob/master/Capture.PNG #download header of document
+
+
 mv template.tex cer.tex
 
 ################################################
+clear
 echo section 1
 read -r section1
 sed -i "s/^section1/$section1/"  cer.tex
@@ -26,6 +30,7 @@ read -r subsection13
 sed -i "s/^subsection13/$subsection13/"  cer.tex
 
 #################################################
+clear
 echo section 2
 read -r section2
 sed -i "s/^section2/$section2/"  cer.tex
@@ -43,6 +48,7 @@ read -r subsection23
 sed -i "s/^subsection23/$subsection23/"  cer.tex
 
 #################################################
+clear
 echo section 3
 read -r section3
 sed -i "s/^section3/$section3/"  cer.tex
@@ -59,6 +65,6 @@ echo subsection 3-3
 read -r subsection33
 sed -i "s/^subsection33/$subsection33/"  cer.tex
 #################################################
+clear
 pdflatex cer.tex && pdflatex cer.tex
 firefox cer.pdf
-
