@@ -1,5 +1,5 @@
 #!/bin/sh
-echo votre nom
+echo votre nom /add sias tu ce que tu veux dire pour auto-completer en remplacantr lispsum[100]
 read -r name
 echo nbr prosit
 read -r nbr
