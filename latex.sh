@@ -1,12 +1,14 @@
 #!/bin/sh
 echo votre nom /add sias tu ce que tu veux dire pour auto-completer en remplacantr lispsum[100]
+echo demande nbr sous section et il fait copier coller un certain nombre de
+ fois pour y ajouter les sous sections le probleme est que chaque sous sectiooon est identique alors probleme pour rajouter les titres
 read -r name
 echo nbr prosit
 read -r nbr
 mkdir /home/$name/Documents/exia/Prosit_$nbr/
 cd /home/$name/Documents/exia/Prosit_$nbr/
 wget https://raw.githubusercontent.com/pierre-geeraert/latex-template-CER/master/template.tex
-wget https://github.com/pierre-geeraert/pierre-geeraert.github.io/blob/master/Capture.PNG #download header of document
+wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 
 
 mv template.tex cer.tex
