@@ -48,6 +48,7 @@ valeur="%\usepackage{mathrsfs}";echo  $valeur >> cer.tex
 valeur="%\usepackage{asmthm}";echo  $valeur >> cer.tex
 valeur="%\usepackage{makeidx}";echo  $valeur >> cer.tex
 valeur="%tout les packages sont a detailler avec les commentaires";echo  $valeur >> cer.tex 
+valeur="";echo  $valeur >> cer.tex
 #add all packages and documentclass
 
 
@@ -62,20 +63,39 @@ valeur="textwidth]{Capture.PNG}}";echo  $valeur >> cer.tex
 valeur=" \\";echo -n $valeur >> cer.tex
 valeur="fancyhead[R]{}";echo  $valeur >> cer.tex
 valeur="%retirer pied de page ";echo  $valeur >> cer.tex
-valeur=" \renewcommand\headrulewidth{0pt}";echo  $valeur >> cer.tex
-valeur=" \renewcommand\footrulewidth{1pt}";echo  $valeur >> cer.tex
+
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="renewcommand\headrulewidth{0pt}";echo  $valeur >> cer.tex
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="renewcommand";echo -n $valeur >> cer.tex
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="footrulewidth{1pt}";echo  $valeur >> cer.tex
 
 #make headers
 
-valeur="\begin{document}";echo  $valeur >> cer.tex
+valeur="";echo  $valeur >> cer.tex #equivalent of space
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="begin{document}";echo  $valeur >> cer.tex
+valeur="";echo  $valeur >> cer.tex
 valeur="\paragraph{}";echo  $valeur >> cer.tex
 valeur="\paragraph{}";echo  $valeur >> cer.tex
-valeur=" \tableofcontents";echo  $valeur >> cer.tex
-valeur=" \raggedright";echo  $valeur >> cer.tex
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="tableofcontents";echo  $valeur >> cer.tex
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="raggedright";echo  $valeur >> cer.tex
 valeur="\paragraph{}";echo  $valeur >> cer.tex
 
 #prepare begin of document and table of contents
 
 
-valeur="\href{";echo  $valeur >> cer.tex
+valeur="\href{";echo -n $valeur >> cer.tex
+echo link
+read -r link
+echo -n $link >> cer.tex
+valeur="}{";echo -n $valeur >> cer.tex
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
 
+#hyperlink is good
+valeur="";echo  $valeur >> cer.tex
+valeur="\end{document}";echo $valeur >> cer.tex
