@@ -6,6 +6,7 @@ rm -Rf $HOME/Documents/Prosit_$nbr/
 
 mkdir $HOME/Documents/Prosit_$nbr/
 cd $HOME/Documents/Prosit_$nbr/
+wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 
 valeur="\documentclass{article}";echo  $valeur >> cer.tex
 valeur="\usepackage{color}%ajout couleur";echo  $valeur >> cer.tex
@@ -97,5 +98,8 @@ valeur="\\";echo -n $valeur >> cer.tex
 valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
 
 #hyperlink is good
+
 valeur="";echo  $valeur >> cer.tex
 valeur="\end{document}";echo $valeur >> cer.tex
+
+#now cer.tex is finish
