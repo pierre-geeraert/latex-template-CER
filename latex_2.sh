@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo nbr prosit
 
 nbr=12
@@ -76,6 +77,7 @@ valeur="footrulewidth{1pt}";echo  $valeur >> cer.tex
 
 valeur="";echo  $valeur >> cer.tex #equivalent of space
 valeur="\\";echo -n $valeur >> cer.tex
+###################################################
 valeur="begin{document}";echo  $valeur >> cer.tex
 valeur="";echo  $valeur >> cer.tex
 valeur="\paragraph{}";echo  $valeur >> cer.tex
@@ -91,13 +93,18 @@ valeur="\paragraph{}";echo  $valeur >> cer.tex
 
 valeur="\href{";echo -n $valeur >> cer.tex
 echo link
-read -r link
-echo -n $link >> cer.tex
+#read -r link
+#echo -n $link >> cer.tex
+valeur="https://doc.ubuntu-fr.org/tutoriel/script_shell";echo -n $valeur >> cer.tex #test
 valeur="}{";echo -n $valeur >> cer.tex
 valeur="\\";echo -n $valeur >> cer.tex
 valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
 
 #hyperlink is good
+
+#creer variables pr nbr section et sous section et faire diminuer quand section/sous-section fini
+
+#text is here
 
 valeur="";echo  $valeur >> cer.tex
 valeur="\end{document}";echo $valeur >> cer.tex
