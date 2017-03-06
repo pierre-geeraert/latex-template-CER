@@ -103,7 +103,21 @@ valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
 #hyperlink is good
 
 #creer variables pr nbr section et sous section et faire diminuer quand section/sous-section fini
+echo nbr section
+read nbr_section
+echo titre section
+read titre_section
+echo nbr sous section
+read nbr_sous_section
 
+
+
+
+valeur="\\";echo -n $valeur >> cer.tex
+valeur="color{red}";echo  $valeur >> cer.tex 	
+#valeur="\\";echo -n $valeur >> cer.tex
+valeur="\subsection{";echo -n $valeur >> cer.tex
+valeur=$titre_section"}";echo  $valeur >> cer.tex
 #text is here
 
 valeur="";echo  $valeur >> cer.tex
