@@ -1,5 +1,17 @@
 #!/bin/bash
 
+
+#declaration fonction section
+section() 
+{ 
+ echo titre section
+ read titre_section
+ valeur="\\";echo -n $valeur >> cer.tex
+ valeur="color{red}";echo  $valeur >> cer.tex 	
+ valeur="\section{";echo -n $valeur >> cer.tex
+ echo  $titre_section} >> cer.tex
+}
+
 echo nbr prosit
 
 nbr=12
@@ -7,7 +19,7 @@ rm -Rf $HOME/Documents/Prosit_$nbr/
 
 mkdir $HOME/Documents/Prosit_$nbr/
 cd $HOME/Documents/Prosit_$nbr/
-wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
+#wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 
 valeur="\documentclass{article}";echo  $valeur >> cer.tex
 valeur="\usepackage{color}%ajout couleur";echo  $valeur >> cer.tex
@@ -103,19 +115,29 @@ valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
 #hyperlink is good
 
 #creer variables pr nbr section et sous section et faire diminuer quand section/sous-section fini
-echo nbr section
-read nbr_section
-echo titre section
-read titre_section
+
+
 echo nbr sous section
 read nbr_sous_section
+
+
+##########section 
+echo nbr section
+read nbr_section
+
+while [ "$nbr_section" -ne 0 ];
+do
+section
+let "nbr_section=nbr_section-1"
+done
+
+
 
 
 
 
 valeur="\\";echo -n $valeur >> cer.tex
 valeur="color{red}";echo  $valeur >> cer.tex 	
-#valeur="\\";echo -n $valeur >> cer.tex
 valeur="\section{";echo -n $valeur >> cer.tex
 echo  $titre_section} >> cer.tex
 let "nbr_section=nbr_section-1"
@@ -127,7 +149,7 @@ valeur="\\";echo -n $valeur >> cer.tex
 valeur="color{blue}";echo  $valeur >> cer.tex 	
 
 valeur="\subsection{";echo -n $valeur >> cer.tex
-echo  $titre_section >> cer.tex
+echo  $titre_section} >> cer.tex
 let "nbr_section=nbr_section-1"
 
 
@@ -139,3 +161,6 @@ valeur="";echo  $valeur >> cer.tex
 valeur="\end{document}";echo $valeur >> cer.tex
 
 #now cer.tex is finish
+
+
+
