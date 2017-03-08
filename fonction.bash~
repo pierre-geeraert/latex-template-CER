@@ -3,7 +3,6 @@ section()
 	{
 	 
 	clear
-	echo nous somme dans la section $nbr_section_effectif
 	echo titre section ?
 	read titre_section
 	valeur="\\";echo -n $valeur >> cer.tex
@@ -19,7 +18,7 @@ section()
 ###########################declaration fonction sous section
 sous_section() 
 	{ 
-	echo titre sous section $nbr_sous_section_effectif
+	echo titre sous section ?
 	read titre_sous_section
 	valeur="\\";echo -n $valeur >> cer.tex
 	valeur="color{blue}";echo  $valeur >> cer.tex 	

@@ -98,6 +98,7 @@ valeur="\href{";echo -n $valeur >> cer.tex
 echo link
 read -r link
 echo -n $link >> cer.tex
+echo -n $link >> cer.tex
 valeur="}{";echo -n $valeur >> cer.tex
 valeur="\\";echo -n $valeur >> cer.tex
 valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex

@@ -4,6 +4,7 @@
 \section{un}
 \color{red}
 \section{deux}
+
 \color{red}
 \section{un}
 \color{blue}
@@ -17,3 +18,18 @@
 \color{black}
 \color{red}
 \section{deux}
+\color{blue}
+\subsection{2-1}
+\color{black}
+\color{blue}
+\subsection{2-2}
+\color{black}
+\color{blue}
+\subsection{2-3}
+\color{black}
+\color{blue}
+\subsection{2-4}
+\color{black}
+\color{blue}
+\subsection{2-5}
+\color{black}
