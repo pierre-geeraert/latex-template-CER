@@ -39,7 +39,7 @@ while [ "$nbr_section_effectif" -le "$nbr_section_voulu" ];
 
 	echo nbr sous section
 	read nbr_sous_section_voulu
-	nbr_sous_section_effectif=1
+	nbr_sous_section_effecif=1
 	echo $nbr_sous_section_effectif
 
 	while [ "$nbr_sous_section_effectif" -le "$nbr_sous_section_voulu" ];
