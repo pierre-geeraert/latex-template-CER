@@ -53,7 +53,8 @@ valeur="%\usepackage{amssymb}";echo  $valeur >> cer.tex
 valeur="%\usepackage{mathrsfs}";echo  $valeur >> cer.tex
 valeur="%\usepackage{asmthm}";echo  $valeur >> cer.tex
 valeur="%\usepackage{makeidx}";echo  $valeur >> cer.tex
- 
+valeur="\hypersetup{%";echo  $valeur >> cer.tex
+valeur=" colorlinks = true,  linkcolor  = black} ";echo  $valeur >> cer.tex
 valeur="";echo  $valeur >> cer.tex
 #add all packages and documentclass
 
