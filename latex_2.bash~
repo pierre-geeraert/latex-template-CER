@@ -53,7 +53,8 @@ valeur="%\usepackage{amssymb}";echo  $valeur >> cer.tex
 valeur="%\usepackage{mathrsfs}";echo  $valeur >> cer.tex
 valeur="%\usepackage{asmthm}";echo  $valeur >> cer.tex
 valeur="%\usepackage{makeidx}";echo  $valeur >> cer.tex
- 
+valeur="\hypersetup{%";echo  $valeur >> cer.tex
+valeur=" colorlinks = true,  linkcolor  = black} ";echo  $valeur >> cer.tex
 valeur="";echo  $valeur >> cer.tex
 #add all packages and documentclass
 
@@ -97,7 +98,6 @@ valeur="\paragraph{}";echo  $valeur >> cer.tex
 valeur="\href{";echo -n $valeur >> cer.tex
 echo link
 read -r link
-echo -n $link >> cer.tex
 echo -n $link >> cer.tex
 valeur="}{";echo -n $valeur >> cer.tex
 valeur="\\";echo -n $valeur >> cer.tex
@@ -148,5 +148,6 @@ valeur="\end{document}";echo $valeur >> cer.tex
 
 ##########################now cer.tex is finish
 
-
+pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
+firefox cer.pdf #change firefox with your pdf viewer software 
 

@@ -10,6 +10,9 @@ section()
 	valeur="color{red}";echo  $valeur >> cer.tex 	
 	valeur="\section{";echo -n $valeur >> cer.tex
 	echo  $titre_section} >> cer.tex
+	valeur="\\";echo -n $valeur >> cer.tex
+	valeur="color{black}";echo  $valeur >> cer.tex
+	valeur="";echo  $valeur >> cer.tex
 	}
 #############################################fin declaration
 
@@ -27,6 +30,8 @@ sous_section()
 	echo  $titre_sous_section} >> cer.tex
 	valeur="\\";echo -n $valeur >> cer.tex
 	valeur="color{black}";echo  $valeur >> cer.tex
+	valeur="";echo  $valeur >> cer.tex
+	valeur="";echo  $valeur >> cer.tex
 	}
 ############################################""fin declaration
 
