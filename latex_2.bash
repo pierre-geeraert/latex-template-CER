@@ -7,101 +7,143 @@ source fonction.bash
 echo nbr prosit
 read nbr
 
-
+echo nom prosit
+read nom
 
 mkdir $HOME/Documents/Prosit_$nbr/
 cd $HOME/Documents/Prosit_$nbr/
 wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 
-valeur="\documentclass{article}";echo  $valeur >> cer.tex
-valeur="\usepackage{color}%ajout couleur";echo  $valeur >> cer.tex
-valeur="\usepackage{fancyhdr}";echo  $valeur >> cer.tex
-valeur="\usepackage{geometry}";echo  $valeur >> cer.tex
-valeur="\usepackage{graphicx}";echo  $valeur >> cer.tex
-valeur="\usepackage[french]{babel}";echo  $valeur >> cer.tex
-valeur="\usepackage{hyperref}%permet hyperlien";echo  $valeur >> cer.tex
-valeur="\usepackage[utf8]{inputenc}";echo  $valeur >> cer.tex
-valeur="\usepackage{lipsum}%texte en vrac pour mise en forme ";echo  $valeur >> cer.tex
-valeur="\usepackage{amsmath}";echo  $valeur >> cer.tex
-valeur="\usepackage{xcolor}";echo  $valeur >> cer.tex
-valeur="\usepackage{soul}";echo  $valeur >> cer.tex
-valeur="\usepackage{array}";echo  $valeur >> cer.tex
-valeur="%\usepackage[latin1]{inputenc}";echo  $valeur >> cer.tex
-valeur="%\usepackage[T1]{fontenc}";echo  $valeur >> cer.tex
-valeur="%\usepackage{layout}";echo  $valeur >> cer.tex
-valeur="%\usepackage{geometry}";echo  $valeur >> cer.tex
-valeur="%\usepackage{setspace}";echo  $valeur >> cer.tex
-valeur="%\usepackage{soul}";echo  $valeur >> cer.tex
-valeur="%\usepackage{ulem}";echo  $valeur >> cer.tex
-valeur="%\usepackage{eurosym}";echo  $valeur >> cer.tex
-valeur="%\usepackage{bookman}";echo  $valeur >> cer.tex
-valeur="%\usepackage{charter}";echo  $valeur >> cer.tex
-valeur="%\usepackage{newcent}";echo  $valeur >> cer.tex
-valeur="%\usepackage{lmodern}";echo  $valeur >> cer.tex
-valeur="%\usepackage{mathpazo}";echo  $valeur >> cer.tex
-valeur="%\usepackage{mathptmx}";echo  $valeur >> cer.tex
-valeur="%\usepackage{url}";echo  $valeur >> cer.tex
-valeur="%\usepackage{verbatim}";echo  $valeur >> cer.tex
-valeur="%\usepackage{moreverb}";echo  $valeur >> cer.tex
-valeur="%\usepackage{listings}";echo  $valeur >> cer.tex
-valeur="%\usepackage{fancyhdr}";echo  $valeur >> cer.tex
-valeur="%\usepackage{wrapfig}";echo  $valeur >> cer.tex
-valeur="%\usepackage{color}";echo  $valeur >> cer.tex
-valeur="%\usepackage{colortbl}";echo  $valeur >> cer.tex
-valeur="%\usepackage{amsmath}";echo  $valeur >> cer.tex
-valeur="%\usepackage{amssymb}";echo  $valeur >> cer.tex
-valeur="%\usepackage{mathrsfs}";echo  $valeur >> cer.tex
-valeur="%\usepackage{asmthm}";echo  $valeur >> cer.tex
-valeur="%\usepackage{makeidx}";echo  $valeur >> cer.tex
-valeur="\hypersetup{%";echo  $valeur >> cer.tex
-valeur=" colorlinks = true,  linkcolor  = black} ";echo  $valeur >> cer.tex
-valeur="";echo  $valeur >> cer.tex
-#add all packages and documentclass
+echo -E '\documentclass{article}
+\usepackage{color}%ajout couleur
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{hyperref}%permet hyperlien
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}%texte en vrac pour mise en forme
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{draftwatermark}
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{layout}
+%\usepackage{geometry}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter} 
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{listings}
+%\usepackage{fancyhdr}
+%\usepackage{wrapfig}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}' >> cer.tex
+
+
+
+echo -E '
+%----------------------------texte en filigrane
+\SetWatermarkLightness{0.75}
+\SetWatermarkAngle{35}
+\SetWatermarkScale{2}
+\SetWatermarkFontSize{2cm}'>> cer.tex
+echo  -E '\SetWatermarkText{Prosit '$nbr'}  
+
+%----------------------------'>> cer.tex
+
+
+
+echo -E '
+%retirer encadré rouge sommaire
+\hypersetup{%
+colorlinks = true, linkcolor = black}' >> cer.tex
+
+echo -E '
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+%\pagestyle{fancy}
+%\fancyhead[R]{}
+%retirer pied de page
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{1pt}' >> cer.tex
+
+
+
+echo -E '
+%----------------------------creation bigcenter
+\makeatletter
+\newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
+\def\bigcenter{\trivlist \bigcentering\item\relax}
+\def\bigcentering{\let\\\@centercr\rightskip\@bigflushglue%
+\leftskip\@bigflushglue
+\parindent\z@\parfillskip\z@skip}
+\def\endbigcenter{\endtrivlist}
+\makeatother
+%----------------------------' >> cer.tex
+
+
+echo -E '
+\newcommand{\ligne}{\newline
+\newline}
+\newcommand{\headers}{%----------------------------headers
+\begin{figure}[!h]
+\centering
+\vspace{-1.5cm}
+\bigcenter
+\includegraphics[scale=1.05]{Capture.PNG}
+\end{figure}
+%----------------------------
+}' >> cer.tex
 
 
 
 
-valeur="\geometry{hmargin=2.5cm,vmargin=1.5cm}";echo  $valeur >> cer.tex
-valeur="\pagestyle{fancy}";echo  $valeur >> cer.tex
-valeur=" \\";echo -n $valeur >> cer.tex
-valeur="fancyhead[C]{\includegraphics[width=";echo -n $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="textwidth]{Capture.PNG}}";echo  $valeur >> cer.tex
-valeur=" \\";echo -n $valeur >> cer.tex
-valeur="fancyhead[R]{}";echo  $valeur >> cer.tex
-valeur="%retirer pied de page ";echo  $valeur >> cer.tex
 
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="renewcommand\headrulewidth{0pt}";echo  $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="renewcommand";echo -n $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="footrulewidth{1pt}";echo  $valeur >> cer.tex
 
-#make headers
 
-valeur="";echo  $valeur >> cer.tex #equivalent of space
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="begin{document}";echo  $valeur >> cer.tex
-valeur="";echo  $valeur >> cer.tex
-valeur="\paragraph{}";echo  $valeur >> cer.tex
-valeur="\paragraph{}";echo  $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="tableofcontents";echo  $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="raggedright";echo  $valeur >> cer.tex
-valeur="\paragraph{}";echo  $valeur >> cer.tex
+
+
+echo -E '
+\begin{document}
+\headers
+
+\huge' >> cer.tex
+echo -E '\center{Prosit' $nbr $nom '}' >> cer.tex
+
+echo -E '
+\normalsize
+\paragraph{}
+\paragraph{}
+\tableofcontents
+\raggedright
+\paragraph{}
+' >> cer.tex
 
 #prepare begin of document and table of contents
 
 
-valeur="\href{";echo -n $valeur >> cer.tex
 echo link
 read -r link
-echo -n $link >> cer.tex
-valeur="}{";echo -n $valeur >> cer.tex
-valeur="\\";echo -n $valeur >> cer.tex
-valeur="color{blue}Intitulée du prosit}";echo  $valeur >> cer.tex
+
+echo -E '\href{'$link'}{\color{blue}Intitulée du prosit} ' >> cer.tex
+
+
 
 #hyperlink is good
 
@@ -149,5 +191,5 @@ valeur="\end{document}";echo $valeur >> cer.tex
 ##########################now cer.tex is finish
 
 pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
-firefox cer.pdf #change firefox with your pdf viewer software 
+firefox cer.pdf && #change firefox with your pdf viewer software 
 thunar 
