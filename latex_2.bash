@@ -29,7 +29,7 @@ echo -E '\documentclass{article}
 \usepackage{array}
 \usepackage{draftwatermark}
 %\usepackage[latin1]{inputenc}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 %\usepackage{layout}
 %\usepackage{geometry}
 %\usepackage{setspace}
