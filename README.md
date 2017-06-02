@@ -5,3 +5,12 @@ latex2.sh/latex2.bash are script who can adapt CER , they write each line and th
 latex_test.bash is a little programm who can create the reel number of section/subsection , he write on cer.tex
 fonction.bahs contains a part of fonction and he will be have all big operation to upgrade latex2.sh/latex2.bash
 
+
+
+```
+sudo apt-get install git
+git init
+git clone https://github.com/pierre-geeraert/latex-template-CER.git
+cd latex-template-cer
+sudo bash latex2.bash
+```
