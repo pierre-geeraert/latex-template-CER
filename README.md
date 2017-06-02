@@ -7,6 +7,7 @@ fonction.bahs contains a part of fonction and he will be have all big operation 
 
 
 
+## Deployment
 ```
 sudo apt-get install git
 git init
