@@ -6,12 +6,15 @@ latex_test.bash is a little programm who can create the reel number of section/s
 fonction.bahs contains a part of fonction and he will be have all big operation to upgrade latex2.sh/latex2.bash
 
 
-
-## Deployment
+## Prerequisites
 ```
 sudo apt-get install git
+```
+## Deployment
+```
+
 git init
 git clone https://github.com/pierre-geeraert/latex-template-CER.git
 cd latex-template-cer
-sudo bash latex2.bash
+bash latex2.bash
 ```
