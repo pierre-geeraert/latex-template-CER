@@ -192,4 +192,5 @@ valeur="\end{document}";echo $valeur >> cer.tex
 
 pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
 firefox cer.pdf && #change firefox with your pdf viewer software 
+sh erase.sh
 thunar 
