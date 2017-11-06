@@ -124,7 +124,7 @@ echo -E '
 \headers
 
 \huge' >> cer.tex
-echo -E '\center{Prosit' $nbr $nom '}' >> cer.tex
+echo -E '\center{Prosit' $nbr '-' $nom '}' >> cer.tex
 
 echo -E '
 \normalsize
