@@ -1,20 +1,4 @@
-#!/bin/bash
-
-
-#declaration fonction section
-source fonction.bash
-
-echo nbr prosit
-read nbr
-
-echo nom prosit
-read nom
-
-mkdir $HOME/Documents/Prosit_$nbr/
-cd $HOME/Documents/Prosit_$nbr/
-wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
-
-echo -E '\documentclass{article}
+\documentclass{article}
 \usepackage{color}%ajout couleur
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -54,38 +38,28 @@ echo -E '\documentclass{article}
 %\usepackage{amssymb}
 %\usepackage{mathrsfs}
 %\usepackage{asmthm}
-%\usepackage{makeidx}' >> cer.tex
+%\usepackage{makeidx}
 
-
-
-echo -E '
 %----------------------------texte en filigrane
 \SetWatermarkLightness{0.75}
 \SetWatermarkAngle{35}
 \SetWatermarkScale{2}
-\SetWatermarkFontSize{2cm}'>> cer.tex
-echo  -E '\SetWatermarkText{Prosit '$nbr'}  
+\SetWatermarkFontSize{2cm}
+\SetWatermarkText{Prosit 2}  
 
-%----------------------------'>> cer.tex
+%----------------------------
 
-
-
-echo -E '
 %retirer encadré rouge sommaire
 \hypersetup{%
-colorlinks = true, linkcolor = black}' >> cer.tex
+colorlinks = true, linkcolor = black}
 
-echo -E '
 \geometry{hmargin=2.5cm,vmargin=1.5cm}
 %\pagestyle{fancy}
 %\fancyhead[R]{}
 %retirer pied de page
 \renewcommand\headrulewidth{0pt}
-\renewcommand\footrulewidth{1pt}' >> cer.tex
+\renewcommand\footrulewidth{1pt}
 
-
-
-echo -E '
 %----------------------------creation bigcenter
 \makeatletter
 \newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
@@ -95,10 +69,8 @@ echo -E '
 \parindent\z@\parfillskip\z@skip}
 \def\endbigcenter{\endtrivlist}
 \makeatother
-%----------------------------' >> cer.tex
+%----------------------------
 
-
-echo -E '
 \newcommand{\ligne}{\newline
 \newline}
 \newcommand{\headers}{%----------------------------headers
@@ -109,87 +81,19 @@ echo -E '
 \includegraphics[scale=1.05]{Capture.PNG}
 \end{figure}
 %----------------------------
-}' >> cer.tex
+}
 
-
-
-
-
-
-
-
-
-echo -E '
 \begin{document}
 \headers
 
-\huge' >> cer.tex
-echo -E '\center{Prosit' $nbr $nom '}' >> cer.tex
+\huge
+\center{Prosit 2 d }
 
-echo -E '
 \normalsize
 \paragraph{}
 \paragraph{}
 \tableofcontents
 \raggedright
 \paragraph{}
-' >> cer.tex
 
-#prepare begin of document and table of contents
-
-
-echo link
-read -r link
-
-echo -E '\href{'$link'}{\color{blue}Intitulée du prosit} ' >> cer.tex
-
-
-
-#hyperlink is good
-
-
-
-
-
-
-##########section 
-
-
-
-echo nbr section 
-read nbr_section_voulu
-nbr_section_effectif=1
-
-
-while [ "$nbr_section_effectif" -le "$nbr_section_voulu" ];
-	do
-	echo nous somme dans la section $nbr_section_effectif
-	section
-
-	echo nbr sous section
-	read nbr_sous_section_voulu
-	nbr_sous_section_effectif=1
-	echo $nbr_sous_section_effectif
-
-	while [ "$nbr_sous_section_effectif" -le "$nbr_sous_section_voulu" ];
-		do
-		sous_section
-		let "nbr_sous_section_effectif=nbr_sous_section_effectif+1"
-		done
-
-	let "nbr_section_effectif=nbr_section_effectif+1"
-
-	done
-
-
-
-####################################text is here
-
-valeur="";echo  $valeur >> cer.tex
-valeur="\end{document}";echo $valeur >> cer.tex
-
-##########################now cer.tex is finish
-
-pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
-firefox cer.pdf && #change firefox with your pdf viewer software 
-thunar 
+\href{google}{\color{blue}Intitulée du prosit} 
