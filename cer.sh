@@ -13,6 +13,7 @@ read nom
 mkdir $HOME/Documents/exia/Prosit_$nbr/
 cd $HOME/Documents/exia/Prosit_$nbr/
 wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
+wget https://pierre-geeraert.github.io/logo.jpeg #download logo for item
 
 echo -E '\documentclass{article}
 \usepackage{color}%ajout couleur
@@ -113,9 +114,9 @@ echo -E '
 
 
 
-
-
-
+echo -E '
+\newcommand{\itemExia}{\item[\includegraphics{./logo.jpeg}]}
+' >> cer.tex
 
 
 
