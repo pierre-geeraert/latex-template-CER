@@ -16,5 +16,5 @@ sudo apt-get install git
 git init
 git clone https://github.com/pierre-geeraert/latex-template-CER.git
 cd latex-template-cer
-bash latex2.bash
+./cer.sh
 ```
