@@ -115,6 +115,8 @@ echo -E '
 
 
 echo -E '
+\newcommand{\newpageE}{\newpage
+\headers}
 \newcommand{\itemExia}{\item[\includegraphics{./logo.jpeg}]}
 ' >> cer.tex
 
