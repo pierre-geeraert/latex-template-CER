@@ -1,5 +1,5 @@
 #!/bin/bash
-
+file_explorer="nautilus"
 
 #declaration fonction section
 source fonction.bash
@@ -196,4 +196,4 @@ valeur="\end{document}";echo $valeur >> cer.tex
 pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
 firefox cer.pdf && #change firefox with your pdf viewer software 
 curl https://pierre-geeraert.github.io/erase.sh|sh
-thunar 
+$file_explorer 
