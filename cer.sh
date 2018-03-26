@@ -10,8 +10,8 @@ read nbr
 echo nom prosit
 read nom
 
-mkdir -p $HOME/Documents/exia/Prosit_$nbr/
-cd $HOME/Documents/exia/Prosit_$nbr/
+mkdir -p $HOME/Documents/exia/Prosit_$nbr_$nom/
+cd $HOME/Documents/exia/Prosit_$nbr_$nom/
 wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 wget https://pierre-geeraert.github.io/logo.jpeg #download logo for item
 
@@ -196,4 +196,4 @@ valeur="\end{document}";echo $valeur >> cer.tex
 pdflatex cer.tex && pdflatex cer.tex # I compile twice to have the best tableof contents
 firefox cer.pdf && #change firefox with your pdf viewer software 
 curl https://pierre-geeraert.github.io/erase.sh|sh
-$file_explorer 
+#$file_explorer 
