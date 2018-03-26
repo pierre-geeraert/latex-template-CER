@@ -97,3 +97,371 @@ colorlinks = true, linkcolor = black}
 \paragraph{}
 
 \href{google}{\color{blue}Intitulée du prosit} 
+\documentclass{article}
+\usepackage{color}%ajout couleur
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{hyperref}%permet hyperlien
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}%texte en vrac pour mise en forme
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{draftwatermark}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{layout}
+%\usepackage{geometry}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter} 
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{listings}
+%\usepackage{fancyhdr}
+%\usepackage{wrapfig}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+
+%----------------------------texte en filigrane
+\SetWatermarkLightness{0.75}
+\SetWatermarkAngle{35}
+\SetWatermarkScale{2}
+\SetWatermarkFontSize{2cm}
+\SetWatermarkText{Prosit 20}  
+
+%----------------------------
+
+%retirer encadré rouge sommaire
+\hypersetup{%
+colorlinks = true, linkcolor = black}
+
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+%\pagestyle{fancy}
+%\fancyhead[R]{}
+%retirer pied de page
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{1pt}
+
+%----------------------------creation bigcenter
+\makeatletter
+\newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
+\def\bigcenter{\trivlist \bigcentering\item\relax}
+\def\bigcentering{\let\\\@centercr\rightskip\@bigflushglue%
+\leftskip\@bigflushglue
+\parindent\z@\parfillskip\z@skip}
+\def\endbigcenter{\endtrivlist}
+\makeatother
+%----------------------------
+
+\newcommand{\ligne}{\newline
+\newline}
+\newcommand{\headers}{%----------------------------headers
+\begin{figure}[!h]
+\centering
+\vspace{-1.5cm}
+\bigcenter
+\includegraphics[scale=1.05]{Capture.PNG}
+\end{figure}
+%----------------------------
+}
+
+\newcommand{\newpageE}{\newpage
+\headers}
+\newcommand{\itemExia}{\item[\includegraphics{./logo.jpeg}]}
+
+
+\begin{document}
+\headers
+
+\huge
+\center{Prosit 20 - PHP objet BDD }
+
+\normalsize
+\paragraph{}
+\paragraph{}
+\tableofcontents
+\raggedright
+\paragraph{}
+
+\href{https://moodle-exia.cesi.fr/course/view.php?id=620}{\color{blue}Intitulée du prosit} 
+
+\end{document}
+\documentclass{article}
+\usepackage{color}%ajout couleur
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{hyperref}%permet hyperlien
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}%texte en vrac pour mise en forme
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{draftwatermark}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{layout}
+%\usepackage{geometry}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter} 
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{listings}
+%\usepackage{fancyhdr}
+%\usepackage{wrapfig}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+
+%----------------------------texte en filigrane
+\SetWatermarkLightness{0.75}
+\SetWatermarkAngle{35}
+\SetWatermarkScale{2}
+\SetWatermarkFontSize{2cm}
+\SetWatermarkText{Prosit 20}  
+
+%----------------------------
+
+%retirer encadré rouge sommaire
+\hypersetup{%
+colorlinks = true, linkcolor = black}
+
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+%\pagestyle{fancy}
+%\fancyhead[R]{}
+%retirer pied de page
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{1pt}
+
+%----------------------------creation bigcenter
+\makeatletter
+\newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
+\def\bigcenter{\trivlist \bigcentering\item\relax}
+\def\bigcentering{\let\\\@centercr\rightskip\@bigflushglue%
+\leftskip\@bigflushglue
+\parindent\z@\parfillskip\z@skip}
+\def\endbigcenter{\endtrivlist}
+\makeatother
+%----------------------------
+
+\newcommand{\ligne}{\newline
+\newline}
+\newcommand{\headers}{%----------------------------headers
+\begin{figure}[!h]
+\centering
+\vspace{-1.5cm}
+\bigcenter
+\includegraphics[scale=1.05]{Capture.PNG}
+\end{figure}
+%----------------------------
+}
+
+\newcommand{\newpageE}{\newpage
+\headers}
+\newcommand{\itemExia}{\item[\includegraphics{./logo.jpeg}]}
+
+
+\begin{document}
+\headers
+
+\huge
+\center{Prosit 20 - PHP objet BDD }
+
+\normalsize
+\paragraph{}
+\paragraph{}
+\tableofcontents
+\raggedright
+\paragraph{}
+
+\href{https://moodle-exia.cesi.fr/course/view.php?id=620}{\color{blue}Intitulée du prosit} 
+\newpageE
+\color{red}
+\section{a}
+\color{black}
+
+
+\end{document}
+\documentclass{article}
+\usepackage{color}%ajout couleur
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{hyperref}%permet hyperlien
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}%texte en vrac pour mise en forme
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{draftwatermark}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{layout}
+%\usepackage{geometry}
+%\usepackage{setspace}
+%\usepackage{soul}
+%\usepackage{ulem}
+%\usepackage{eurosym}
+%\usepackage{bookman}
+%\usepackage{charter} 
+%\usepackage{newcent}
+%\usepackage{lmodern}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{url}
+%\usepackage{verbatim}
+%\usepackage{moreverb}
+%\usepackage{listings}
+%\usepackage{fancyhdr}
+%\usepackage{wrapfig}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{mathrsfs}
+%\usepackage{asmthm}
+%\usepackage{makeidx}
+
+%----------------------------texte en filigrane
+\SetWatermarkLightness{0.75}
+\SetWatermarkAngle{35}
+\SetWatermarkScale{2}
+\SetWatermarkFontSize{2cm}
+\SetWatermarkText{Prosit 20}  
+
+%----------------------------
+
+%retirer encadré rouge sommaire
+\hypersetup{%
+colorlinks = true, linkcolor = black}
+
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+%\pagestyle{fancy}
+%\fancyhead[R]{}
+%retirer pied de page
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{1pt}
+
+%----------------------------creation bigcenter
+\makeatletter
+\newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
+\def\bigcenter{\trivlist \bigcentering\item\relax}
+\def\bigcentering{\let\\\@centercr\rightskip\@bigflushglue%
+\leftskip\@bigflushglue
+\parindent\z@\parfillskip\z@skip}
+\def\endbigcenter{\endtrivlist}
+\makeatother
+%----------------------------
+
+\newcommand{\ligne}{\newline
+\newline}
+\newcommand{\headers}{%----------------------------headers
+\begin{figure}[!h]
+\centering
+\vspace{-1.5cm}
+\bigcenter
+\includegraphics[scale=1.05]{Capture.PNG}
+\end{figure}
+%----------------------------
+}
+
+\newcommand{\newpageE}{\newpage
+\headers}
+\newcommand{\itemExia}{\item[\includegraphics{./logo.jpeg}]}
+
+
+\begin{document}
+\headers
+
+\huge
+\center{Prosit 20 - PHP objet bdd }
+
+\normalsize
+\paragraph{}
+\paragraph{}
+\tableofcontents
+\raggedright
+\paragraph{}
+
+\href{https://moodle-exia.cesi.fr/course/view.php?id=620}{\color{blue}Intitulée du prosit} 
+\newpageE
+\color{red}
+\section{BDD}
+\color{black}
+
+\color{blue}
+\subsection{Procédures stockées}
+\color{black}
+
+
+\color{blue}
+\subsection{transaction}
+\color{black}
+
+
+\newpageE
+\color{red}
+\section{connexion}
+\color{black}
+
+\color{blue}
+\subsection{PDO}
+\color{black}
+
+
+\color{blue}
+\subsection{requetes sql}
+\color{black}
+
+
+\color{blue}
+\subsection{Comparaison requetes/procedures}
+\color{black}
+
+
+\color{blue}
+\subsection{Authentification}
+\color{black}
+
+
+\color{blue}
+\subsection{Controles des variables}
+\color{black}
+
+
+
+\end{document}

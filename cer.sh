@@ -10,8 +10,8 @@ read nbr
 echo nom prosit
 read nom
 
-mkdir -p $HOME/Documents/exia/Prosit_$nbr_$nom/
-cd $HOME/Documents/exia/Prosit_$nbr_$nom/
+mkdir -p $HOME/Documents/exia/"Prosit_$nbr$nom"/
+cd $HOME/Documents/exia/"Prosit_$nbr$nom"/
 wget https://pierre-geeraert.github.io/Capture.PNG #download header of document
 wget https://pierre-geeraert.github.io/logo.jpeg #download logo for item
 
